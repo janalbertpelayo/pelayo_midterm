@@ -29,7 +29,9 @@ class ProductController extends Controller
 
         $newProduct = Product::create($data);
 
-        return redirect()->route('product.index');
+        // return redirect()->route('product.index');
+        return response()->json(['message' => 'Product created successfully', 'product' => $newProduct], 201);
+
         
     }
 
@@ -50,8 +52,7 @@ class ProductController extends Controller
         $product->update($data);
         return response()->json(['message' => 'Product updated successfully', 'product' => $product], 200);
     }
-
-// Remove the specified product from storage 
+    
     public function destroy(Product $product)
     {
         $product->delete();
