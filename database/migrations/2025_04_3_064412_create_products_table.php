@@ -17,8 +17,7 @@ return new class extends Migration
             $table->integer('qty'); // Integer, required
             $table->decimal('price', 10, 2); // Decimal, required
             $table->text('description'); // Text, required
-            $table->timestamps('created_at'); // Timestamps for creation
-            $table->timestamps('updated_at'); // Timestamps for last update
+            $table->timestamps(); // Timestamps for creation and update
         });
     }
 
