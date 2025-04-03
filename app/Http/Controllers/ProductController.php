@@ -48,10 +48,10 @@ class ProductController extends Controller
         ]);
 
         $product->update($data);
-
-        return redirect(route('product.index'))->with('success', 'Product updated successfully');   
+        return response()->json(['message' => 'Product updated successfully', 'product' => $product], 200);
     }
 
+// Remove the specified product from storage 
     public function destroy(Product $product)
     {
         $product->delete();
